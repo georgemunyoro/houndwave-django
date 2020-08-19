@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		<meta charset="UTF-8">
+		<title>Home</title>
+	</head>
+	<body>
+		<div class="m-3 p-2 rounded shadow-sm">
+			<form class="" style="display: flex; font-size: 1.5rem;" action="{% url 'search_results' %}" method="get">
+				<input style="font-size: 1.8rem; border: none; outline: none !important;" class="form-control p-5" name="q" type="text" placeholder="Search for an artist, track or album...">
+				<button style="font-size: 1.5rem;" class="btn btn-primary w-25"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
+		<hr>
+	</body>
+</html>
+

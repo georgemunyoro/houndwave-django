@@ -1,0 +1,46 @@
+ <!DOCTYPE html>
+ <html>
+	 <head>
+		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+		 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+		 <meta charset="UTF-8">
+		 <title>Search</title>
+	 </head>
+	 <body>
+		<style>
+		* {
+			font-size: 1.5rem;
+		}
+		</style>
+
+		<div class="m-3 p-2 rounded shadow-sm">
+			<form class="" style="display: flex; font-size: 1.5rem;" action="{% url 'search_results' %}" method="get">
+				<input style="font-size: 1.8rem; border: none; outline: none !important;" class="form-control p-5" name="q" type="text" placeholder="Search...">
+				<button style="font-size: 1.5rem;" class="btn btn-primary w-25"><i class="fa fa-search"></i></button>
+			</form>
+		</div>
+		<hr>
+
+		{% for result in results %}
+		<div class="search-results">
+			<div class="search-result m-2 p-2" style="display: grid; grid-template-columns: 30% auto">
+				<div>
+					<img class="w-100 shadow" src="{{ result.image }}" style="border-radius: 5px 5px 0 0;">
+					<form action="{% url 'download_file' id=result.id %}">
+						<button class="shadow btn btn-primary w-100 p-4" style="border-radius: 0 0 5px 5px;"><i class="fa fa-2x fa-download"></i></button>
+					</form>
+				</div>
+				<div>
+					<ul class="font-weight-bold w-100" style="list-style: none; color: gray; position: relative; top: 50%; transform: translateY(-50%);">
+						<li>{{ result.title }}</li>
+						<li>{{ result.artists }}</li>
+						<li>{{ result.album }}</li>
+						<li>{{ result.date }}</li>
+					</ul>
+				</div>
+			</div>
+			<hr>
+		</div>
+		{% endfor %}
+	 </body>
+ </html>
