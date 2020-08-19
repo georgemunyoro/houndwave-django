@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
+import django_heroku
 import os
 from dotenv import load_dotenv
 
@@ -128,3 +129,4 @@ STATIC_URL = '/static/'
 CLIENT_SECRET = os.getenv("CLIENT_SECRET")
 CLIENT_ID = os.getenv("CLIENT_ID")
 
+django_heroku.settings(locals())
