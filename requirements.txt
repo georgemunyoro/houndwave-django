@@ -1,0 +1,16 @@
+Django==3.0.8
+django-allauth==0.42.0
+django-cors-headers==3.4.0
+django-crispy-forms==1.9.2
+django-phone-field==1.8.1
+django-rest-auth==0.9.5
+django-seed==0.2.2
+djangorestframework==3.11.0
+eyeD3==0.9.5
+pipenv==2020.6.2
+python-dateutil==2.8.1
+python-dotenv==0.14.0
+requests==2.24.0
+spotipy==2.13.0
+youtube-dl==2020.7.28
+youtube-search==1.1.0
